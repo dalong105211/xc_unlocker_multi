@@ -1,0 +1,27 @@
+-----20131023By ����
+1.Color.cpp���ӿͻ������˵�void CColor::OnCbnSelchangeComboProduct3()
+����ʼ����Ŀ��void CColor::OnCbnSelchangeComboProduct()�õ�void CColor::OnCbnSelchangeComboProduct3()�С�SQL����м���Customer�ֶ��ж�ѡ��趨��Ŀѡ�������Pack���У��ͻ�ѡ��ֻ����Pack����project��Ӧ��ѡ��
+
+2.Outer.cpp����ʼ����Ŀ��void COuter::OnCbnSelchangeComboProduct()�õ�void COuter::OnCbnSelchangeComboCustomer()�У�SQL����м���Customer�ֶ��ж�ѡ��趨��Ŀѡ�������Pack���У��ͻ�ѡ��ֻ����Pack����project��Ӧ��ѡ��
+
+3.Pallet.cpp����Ŀ��ʼ����void CPallet::OnCbnSelchangeComboProduct()�õ�void CPallet::OnCbnSelchangeComboCustomert()�У�SQL����м���Customer�ֶ��ж�ѡ��趨��Ŀѡ�������Pack���У��ͻ�ѡ��ֻ����Pack����project��Ӧ��ѡ��
+
+4.UserManage.cpp����Ŀ��ʼ����void CCarton::OnCbnSelchangeComboProduct()�õ�void CCarton::OnCbnSelchangeComboCustomert()�У�SQL����м���Customer�ֶ��ж�ѡ��趨��Ŀѡ�������Pack���У��ͻ�ѡ��ֻ����Pack����project��Ӧ��ѡ���Print()���� �ϴ����� ֮������ReGetCartonNum��ǩ�������ϴ������ݺ�check�ϴ������������Դ˵ڶ����ж��Ƿ�����������⡣
+
+5.�ػ���Ŀ�Ϳͻ������˵�λ�UserManager��Outer��Pallet��Carton�����ػ���ź�imei����ʾλ��
+
+
+-----20140213by����
+6.��ӡ��ǩ�������Ӵ�ӡ��Ŀ����������ջ��ʱ�䣬�ռ�����������������ջ����ɫ
+
+---20140313BY ZHAOLONG
+7.ջ��������ɫ������
+
+---20140806BY ZHAOLONG
+8.ջ������ɨ���ַ���Ϊ��д
+
+---20141204BY ZHAOLONG
+9.���� ���������������ܿ�
+
+---20141224
+10.����IMEI�ȶ�վ��λ�ڲʺкͲʺг���֮�䣬���Ӳʺг���Customer������SQL��������Customer���Ż���ѯ�ٶȡ�ĿǰIMEI�ȶ�ֻ��IMEI1�ȶ�

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="BtnST.cpp" />
+    <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="ChildView.cpp" />
+    <ClCompile Include="Login.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="RTK_Pack.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="GridCell.cpp" />
+    <ClCompile Include="GridCellBase.cpp" />
+    <ClCompile Include="GridCtrl.cpp" />
+    <ClCompile Include="GridDropTarget.cpp" />
+    <ClCompile Include="InPlaceEdit.cpp" />
+    <ClCompile Include="TitleTip.cpp" />
+    <ClCompile Include="DeviceCmd.cpp" />
+    <ClCompile Include="VerifyCode.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BtnST.h" />
+    <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="ChildView.h" />
+    <ClInclude Include="FlextronicsObj00.h" />
+    <ClInclude Include="Login.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="..\新建文件夹\RTK_Pack\mysql.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="RTK_Pack.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="CellRange.h" />
+    <ClInclude Include="GridCell.h" />
+    <ClInclude Include="GridCellBase.h" />
+    <ClInclude Include="GridCtrl.h" />
+    <ClInclude Include="GridDropTarget.h" />
+    <ClInclude Include="InPlaceEdit.h" />
+    <ClInclude Include="MemDC.h" />
+    <ClInclude Include="TitleTip.h" />
+    <ClInclude Include="DeviceCmd.h" />
+    <ClInclude Include="CApplication.h" />
+    <ClInclude Include="Cnterior.h" />
+    <ClInclude Include="CRange.h" />
+    <ClInclude Include="CWorkbook.h" />
+    <ClInclude Include="CWorkbooks.h" />
+    <ClInclude Include="CWorksheet.h" />
+    <ClInclude Include="CWorksheets.h" />
+    <ClInclude Include="VerifyCode.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\RTK_Pack.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RTK_Pack.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Fail.ico" />
+    <Image Include="res\Pass.ico" />
+    <Image Include="res\RTK_Pack.ico" />
+    <Image Include="res\Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\RTK_Pack.rc2" />
+    <None Include="res\html_ime.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CHttp">
+      <UniqueIdentifier>{1236be23-7ff2-417c-8c33-acee8fa1cd62}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,522 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于Augent Tool"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "Augent Tool Version 1.1",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "CopyRight (C) 2013-2023",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_DIALOG_MSG DIALOGEX 0, 0, 427, 83
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LIST_MSG,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,0,0,427,82
+END
+
+IDD_DIALOG_CARTON DIALOGEX 0, 0, 385, 201
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_CAPTION | WS_SYSMENU | WS_GROUP | WS_TABSTOP
+CAPTION "User Access"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_FUNCTION,123,34,107,79,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_USER,123,53,107,79,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Function",IDC_STATIC_SELECT_FUN,63,37,50,8
+    LTEXT           "Select Account",IDC_STATIC_SELECT_USER,65,55,48,8
+    PUSHBUTTON      "Action",IDC_BUTTON_ACT,123,128,107,20
+    EDITTEXT        IDC_EDIT_USER,123,70,107,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_PASSWORD,123,90,107,16,ES_AUTOHSCROLL
+    LTEXT           "Account",IDC_STATIC_USER,86,75,27,8
+    LTEXT           "Password",IDC_STATIC_PW,81,96,32,8
+    EDITTEXT        IDC_EDIT_PASSWORD_CFM,123,109,107,16,ES_AUTOHSCROLL
+    LTEXT           "Confirm Password",IDC_STATIC_PW_CFM,55,115,58,8
+    GROUPBOX        "Access Select",IDC_STATIC_ACCESS,238,70,99,54
+    CONTROL         "01_unlock_tool",IDC_CHECK_FUN_1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,246,84,64,10
+    CONTROL         "02_switch_mode_tool",IDC_CHECK_FUN_2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,246,98,85,10
+    CONTROL         "03_adb_tool",IDC_CHECK_FUN_3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,246,111,56,10
+END
+
+IDD_DIALOG_PASSWORD DIALOGEX 0, 0, 157, 74
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Please input dynamic code"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_PASSWORD,21,19,108,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,21,42,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,79,42,50,14
+END
+
+IDD_DIALOG_EXPORT DIALOGEX 0, 0, 459, 215
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_CAPTION | WS_SYSMENU | WS_GROUP | WS_TABSTOP
+CAPTION "v"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_COM,245,28,163,99,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_MODE,245,62,163,99,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Comport",IDC_STATIC,187,32,50,8
+    LTEXT           "Select Tool",IDC_STATIC,201,64,36,8
+    PUSHBUTTON      "Action",IDC_BUTTON_START,257,104,139,20
+    COMBOBOX        IDC_COMBO_RATE,245,45,163,99,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Port Rate",IDC_STATIC,184,48,53,8
+    COMBOBOX        IDC_COMBO_FUNCTION,245,79,163,99,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select Function",IDC_STATIC,187,80,50,8
+    GROUPBOX        "",IDC_STATIC,18,18,154,182
+    CONTROL         "Select All",IDC_CHECK_ALL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,23,35,67,8
+    CONTROL         "COM1",IDC_CHECK_COM1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,62,148,8
+    CONTROL         "COM2",IDC_CHECK_COM2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,79,142,8
+    CONTROL         "COM3",IDC_CHECK_COM3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,96,140,8
+    CONTROL         "COM4",IDC_CHECK_COM4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,113,142,8
+    CONTROL         "COM5",IDC_CHECK_COM5,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,130,145,8
+    CONTROL         "COM6",IDC_CHECK_COM6,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,147,146,8
+    CONTROL         "COM7",IDC_CHECK_COM7,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,164,144,8
+    CONTROL         "COM8",IDC_CHECK_COM8,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,22,181,144,8
+END
+
+IDD_DIALOG_OUTER DIALOGEX 0, 0, 409, 221
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_CAPTION | WS_SYSMENU
+CAPTION "Record View"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_TAB,18,18,97,79,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_KEY,18,34,97,79,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select View Table",IDC_STATIC_TAB_SELECT,121,21,56,8
+    LTEXT           "Select View Key",IDC_STATIC_KEY,121,36,51,8
+    PUSHBUTTON      "VIEW",IDC_BUTTON_SELECT,189,19,62,28
+    PUSHBUTTON      "Export",IDC_BUTTON_EXPORT,331,19,62,28
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",WS_BORDER,17,50,375,6
+END
+
+IDD_DIALOG_PW_MODIFY DIALOGEX 0, 0, 289, 132
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Login"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_PASSWORD_OLD,88,42,108,14,ES_PASSWORD | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Confirm",ID_BUTTON_MODIFY,88,106,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Cancel",IDCANCEL,147,106,50,14,NOT WS_VISIBLE
+    DEFPUSHBUTTON   "Login",ID_BUTTON_LOGIN,204,43,50,14
+    EDITTEXT        IDC_EDIT_PASSWORD_NEW,88,64,108,14,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_PASSWORD_CONFIRM,88,86,108,14,ES_PASSWORD | ES_AUTOHSCROLL | NOT WS_VISIBLE
+    EDITTEXT        IDC_EDIT_USER,88,19,108,14,ES_AUTOHSCROLL
+    LTEXT           "Account",IDC_STATIC,55,23,29,13
+    LTEXT           "Password",IDC_STATIC,53,45,31,13
+    LTEXT           "New Pasword",IDC_STATIC_PW_NEW,40,66,44,13,NOT WS_VISIBLE
+    LTEXT           "Confirm Password",IDC_STATIC_PW_CFM,26,87,58,13,NOT WS_VISIBLE
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DIALOG_MSG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 82
+        HORZGUIDE, 82
+    END
+
+    IDD_DIALOG_CARTON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 378
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 193
+    END
+
+    IDD_DIALOG_PASSWORD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 150
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_DIALOG_EXPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 452
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 208
+    END
+
+    IDD_DIALOG_OUTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 402
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 214
+    END
+
+    IDD_DIALOG_PW_MODIFY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 282
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 125
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#include ""res\\RTK_Pack.rc2""  // 非 Microsoft Visual C++ 编辑资源\r\n"
+    "#include ""afxres.rc""         // 标准组件\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\RTK_Pack.ico"
+IDI_ICON_PASS           ICON                    "res\\Pass.ico"
+IDI_ICON_FAIL           ICON                    "res\\Fail.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    SEPARATOR
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "系统"
+    BEGIN
+        MENUITEM SEPARATOR
+    END
+    POPUP "视图(&V)"
+    BEGIN
+        MENUITEM "状态栏(&S)",                     ID_VIEW_STATUS_BAR
+    END
+    POPUP "帮助(&H)"
+    BEGIN
+        MENUITEM "关于 Augent Tool(&A)...",       ID_APP_ABOUT
+    END
+END
+
+IDR_MENU_LOGIN MENU
+BEGIN
+    POPUP "Login"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "Login",                       ID_LOGIN
+        MENUITEM "Exit",                        ID_APP_EXIT
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "About Augent Tool(&A)...",    ID_APP_ABOUT
+    END
+END
+
+IDR_MENU_AMDIN MENU
+BEGIN
+    POPUP "Login"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "Logout",                      ID_LOGIN_LOGINOUT
+        MENUITEM "Exit",                        ID_APP_EXIT
+    END
+    POPUP "Function"
+    BEGIN
+        MENUITEM "User Access",                 ID_USER_MANAGE
+        MENUITEM "Funciton Module",             ID_FUN_OPER
+        MENUITEM "Record Review",               ID_RECORD_REVIEW
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "About Augent Tool(&A)...",    ID_APP_ABOUT
+    END
+END
+
+IDR_MENU_USER MENU
+BEGIN
+    POPUP "Login"
+    BEGIN
+        MENUITEM SEPARATOR
+        MENUITEM "Logout",                      ID_LOGIN_LOGINOUT
+        MENUITEM "Exit",                        ID_APP_EXIT
+    END
+    POPUP "Function"
+    BEGIN
+        MENUITEM "Funciton Module",             ID_FUN_OPER
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "About Augent Tool(&A)...",    ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,1,2
+ PRODUCTVERSION 1,0,2,7
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000903a8"
+        BEGIN
+            VALUE "CompanyName", "Ragentek"
+            VALUE "FileDescription", "Augent Tool"
+            VALUE "FileVersion", "1.0.1.2"
+            VALUE "InternalName", "Augent Tool"
+            VALUE "LegalCopyright", "TODO: (C) <Wheatek>Long Zhao Licensed。"
+            VALUE "OriginalFilename", "Augent Tool"
+            VALUE "ProductName", "Augent Tool"
+            VALUE "ProductVersion", "1.0.2.7"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x9, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "Augent Tool"
+    IDR_RTK_PackTYPE        "\nAugent Tool\nAugent Tool"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "Augent Tool"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "创建新文档\n新建"
+    ID_FILE_CLOSE           "关闭活动文档\n关闭"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "显示程序信息、版本号和版权\n关于"
+    ID_APP_EXIT             "Click this button will exit app."
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "切换到下一个窗格\n下一窗格"
+    ID_PREV_PANE            "切换回上一个窗格\n上一窗格"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_ARRANGE       "在窗口底部排列图标\n排列图标"
+    ID_WINDOW_CASCADE       "以重叠方式排列窗口\n层叠窗口"
+    ID_WINDOW_TILE_HORZ     "以非重叠的平铺方式排列窗口\n平铺窗口"
+    ID_WINDOW_TILE_VERT     "以非重叠的平铺方式排列窗口\n平铺窗口"
+    ID_WINDOW_SPLIT         "将活动窗口拆分为多个窗格\n拆分"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "清除选定内容\n清除"
+    ID_EDIT_CLEAR_ALL       "清除全部内容\n全部清除"
+    ID_EDIT_COPY            "复制选定内容并将其放到剪贴板上\n复制"
+    ID_EDIT_CUT             "剪切选定内容并将其放到剪贴板上\n剪切"
+    ID_EDIT_FIND            "查找指定的文本\n查找"
+    ID_EDIT_PASTE           "插入剪贴板内容\n粘贴"
+    ID_EDIT_REPEAT          "重复上一操作\n重复"
+    ID_EDIT_REPLACE         "用其他文本替换特定的文本\n替换"
+    ID_EDIT_SELECT_ALL      "选定整个文档\n全选"
+    ID_EDIT_UNDO            "撤消上一操作\n撤消"
+    ID_EDIT_REDO            "恢复上次撤消的操作\n重做"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "显示或隐藏工具栏\n切换工具栏"
+    ID_VIEW_STATUS_BAR      "显示或隐藏状态栏\n切换状态栏"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "更改窗口大小"
+    AFX_IDS_SCMOVE          "更改窗口位置"
+    AFX_IDS_SCMINIMIZE      "将窗口缩小为图标"
+    AFX_IDS_SCMAXIMIZE      "使窗口最大化显示"
+    AFX_IDS_SCNEXTWINDOW    "切换到下一个文档窗口"
+    AFX_IDS_SCPREVWINDOW    "切换到前一个文档窗口"
+    AFX_IDS_SCCLOSE         "关闭活动窗口并提示保存文档"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "将窗口恢复到正常大小"
+    AFX_IDS_SCTASKLIST      "激活任务列表"
+    AFX_IDS_MDICHILD        "激活此窗口"
+END
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE 4, 2
+#pragma code_page(936)
+#include "res\RTK_Pack.rc2"  // 非 Microsoft Visual C++ 编辑资源
+#include "afxres.rc"         // 标准组件
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
