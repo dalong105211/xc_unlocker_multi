@@ -43,6 +43,13 @@ Unlock	0x58 0x43 0x05 0x03 0x02	0x58 0x43 0x06 0x03 0x02
 HANDLE hMutex;
 #define PORT_MTK_DESC		"MediaTek USB VCOM"
 #define PORT_DEFAULT_DESC	"None"
+
+#define STATUS_EMPTY			" "
+#define STATUS_READY			"Ready"
+#define STATUS_PROCESSING		"In processing"
+#define STATUS_SUCCESS			"Successed"
+#define STATUS_FAIL				"Failed"
+
 //GUID g_mtk;
 
 IMPLEMENT_DYNCREATE(CExport, CFormView)
@@ -98,6 +105,43 @@ void CExport::OnDestroy()
 	CloseComport(sOutput);
 	CFormView::OnDestroy();
 	((CMainFrame*)AfxGetMainWnd())->m_Export=NULL;
+}
+
+HBRUSH CExport::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
+{
+	HBRUSH hbr = CFormView::OnCtlColor(pDC, pWnd, nCtlColor);
+
+	pDC->SetBkMode(TRANSPARENT);//透明  
+	pDC->SetTextColor(nCtlColor); //文字颜色    
+	// TODO:  在此更改 DC 的任何特性
+	switch (nCtlColor)
+	{
+		case IDC_STATIC1:
+			return m_brush[0];
+		case IDC_STATIC2:
+			return m_brush[1];
+		case IDC_STATIC3:
+			return m_brush[2];
+		case IDC_STATIC4:
+			return m_brush[3];
+		case IDC_STATIC5:
+			return m_brush[4];
+		case IDC_STATIC6:
+			return m_brush[5];
+		case IDC_STATIC7:
+			return m_brush[6];
+		case IDC_STATIC8:
+			return m_brush[7];
+	}
+	// TODO:  如果默认的不是所需画笔，则返回另一个画笔
+	//if (pWnd->GetDlgCtrlID() == IDC_STATIC1)
+	//{
+	//	pDC->SetBkMode(TRANSPARENT);//透明  
+	//	pDC->SetTextColor(nCtlColor); //文字颜色    
+	//	//pDC->SetBkColor(RGB(251, 0, 0));//背景色  
+	//	return m_brush[0];
+	//}
+	return hbr;
 }
 
 void CExport::OnInitialUpdate() 
@@ -417,6 +461,62 @@ BOOL CExport::isComChecked(int index)
 	return isEnable;
 }
 
+
+void CExport::setStatus(int index,CString status)
+{
+	COLORREF color;
+	if (status == STATUS_READY)
+		color = RGB(0, 0, 0);
+	else if (status == STATUS_PROCESSING)
+	{
+		color = RGB(0, 250, 0);
+	}
+	else if (status == STATUS_SUCCESS)
+	{
+		color = RGB(0, 0, 250);
+	}
+	else if (status == STATUS_FAIL)
+	{
+		color = RGB(250, 0, 0);
+	}
+	else if (status == STATUS_EMPTY)
+	{
+		color = RGB(250, 250, 0);
+	}
+	else
+	{
+		return;
+	}
+
+	m_brush[index].CreateSolidBrush(color);
+	switch (index)
+	{
+	case 0:
+		((CButton *)GetDlgItem(IDC_STATIC1))->SetWindowTextA(status);
+		break;
+	case 1:
+		((CButton *)GetDlgItem(IDC_STATIC2))->SetWindowTextA(status);
+		break;
+	case 2:
+		((CButton *)GetDlgItem(IDC_STATIC3))->SetWindowTextA(status);
+		break;
+	case 3:
+		((CButton *)GetDlgItem(IDC_STATIC4))->SetWindowTextA(status);
+		break;
+	case 4:
+		((CButton *)GetDlgItem(IDC_STATIC5))->SetWindowTextA(status);
+		break;
+	case 5:
+		((CButton *)GetDlgItem(IDC_STATIC6))->SetWindowTextA(status);
+		break;
+	case 6:
+		((CButton *)GetDlgItem(IDC_STATIC7))->SetWindowTextA(status);
+		break;
+	case 7:
+		((CButton *)GetDlgItem(IDC_STATIC8))->SetWindowTextA(status);
+		break;
+	}
+}
 void CExport::listTestEnterance()
 {
 	int port;
@@ -427,19 +527,34 @@ void CExport::listTestEnterance()
 
 	if (getCmd(g_info.func_name,g_info.mode) == FALSE)
 	{
+		setProcessing(FALSE);
 		printLog("Parse comand error.", false);
 		return;
 	}
 	//g_info.cmd = cmd;
-
+	//reset status first.
 	for (int i = 0; i < 8; i++)
 	{
 		if (isComChecked(i) == TRUE && workPortList[i].Find(PORT_MTK_DESC) > -1 && parseComport(workPortList[i], port) == TRUE)
 		{
-			TestProcess(port);
+			setStatus(i,STATUS_READY);
 		}
 	}
-	((CComboBox*)GetDlgItem(IDC_BUTTON_START))->EnableWindow(true);
+	Sleep(500);
+	for (int i = 0; i < 8; i++)
+	{
+		if (isComChecked(i) == TRUE && workPortList[i].Find(PORT_MTK_DESC) > -1 && parseComport(workPortList[i], port) == TRUE)
+		{
+			setStatus(i, STATUS_PROCESSING);
+			if(TRUE == TestProcess(port))
+				setStatus(i, STATUS_SUCCESS);
+			else
+			{
+				setStatus(i, STATUS_FAIL);
+			}
+		}
+	}
+	setProcessing(FALSE);
 }
 
 
@@ -465,7 +580,7 @@ BOOL CExport::TestProcess(int port)
 		}
 		goto end;
 	}
-	Sleep(200);
+	Sleep(500);
 	if (!(ReadComport(sOutput)))
 	{
 		if (!(CloseComport(sOutput)))
@@ -479,7 +594,7 @@ BOOL CExport::TestProcess(int port)
 	{
 		bool res;
 		CString out;
-		if (strncmp(sOutput, g_info.cmd, 2) == 0)
+		if (strncmp(sOutput, g_info.cmd, 2) == 0 || g_info.mode.Find("03_") > -1 || g_info.mode.Find("02_") > -1)
 		{
 			res = true;
 			out = "success";
@@ -567,10 +682,21 @@ int CExport::check_login_status()
 	return 0;
 }
 
+
+void CExport::setProcessing(BOOL processing)
+{
+	((CComboBox*)GetDlgItem(IDC_BUTTON_START))->EnableWindow(!processing);
+	isProcessing = processing;
+}
+BOOL CExport::getProcessing()
+{
+	return isProcessing;
+}
+
 void CExport::OnBnClickedButtonStart()
 {
 	//先disable发送按钮
-	((CComboBox*)GetDlgItem(IDC_BUTTON_START))->EnableWindow(false);
+	setProcessing(TRUE);
 
 	//check login
 	int res = check_login_status();
@@ -582,7 +708,7 @@ void CExport::OnBnClickedButtonStart()
 	}
 	else if (res == -2 || res == -3)	//请求或解析失败
 	{
-		((CComboBox*)GetDlgItem(IDC_BUTTON_START))->EnableWindow(true);
+		setProcessing(FALSE);
 		return;
 	}
 	CWinThread *pThread = AfxBeginThread(pAutoTest, this);
@@ -637,6 +763,12 @@ BOOL CExport::OpenComport(UINT port, CString rate, CString &sOutput)
 	CString Str;
 	Str.Format("%d", port);
 	OpenComPort(Str, sOutput);
+	if (sOutput.Find("error") > -1 || sOutput.Find("fail") > -1)
+	{
+		sOutput.Format("Open comport %s fail.",Str);
+		printLog(sOutput, false);
+		return FALSE;
+	}
 
 	//ClearComPort
 	ClearComPort = (CLEARCOMPORT)GetProcAddress(hDLL, "ClearComPort");  // get process address for dll
@@ -795,7 +927,7 @@ BOOL CExport::parseComport(CString str,int &port)
 // 父窗口发来的消息，进行响应
 LRESULT CExport::OnMyEvent(WPARAM wParam, LPARAM lParam)
 {
-	if (TRUE == isProcessing)
+	if (TRUE == getProcessing())
 	{
 		Logger("DeviceCmd", "It is in process. ignor new comport insert or mount.");
 		return 0;
@@ -1058,14 +1190,22 @@ void CExport::freshDevicePortList()
 	for (int i = 0; i < workPortList.GetSize(); i++)
 	{
 		if (workPortList[i] != PORT_DEFAULT_DESC && isExistInDeviceArray(workPortList[i]) == FALSE)
+		{
 			workPortList.SetAt(i, PORT_DEFAULT_DESC);
+			setStatus(i, STATUS_EMPTY);
+		}
+			
 	}
 
 	//devicePortList不在workPortList的要增加。
 	for (int i = 0; i < devicePortList.GetSize(); i++)
 	{
 		if (isExistInWorkArray(devicePortList[i]) == FALSE)
+		{
 			workPortListAdd(devicePortList[i]);
+			setStatus(i, STATUS_EMPTY);
+		}
+			
 	}
 }
 

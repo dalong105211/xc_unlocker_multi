@@ -112,8 +112,14 @@ public:
 	afx_msg void OnBnClickedCheckAll();
 	void  listTestEnterance(); 
 	BOOL isComChecked(int index);
+	void setStatus(int index,CString status);
+	void setProcessing(BOOL s);
+	BOOL getProcessing();
 
 	S_INFO	g_info;
+
+	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
+	CBrush m_brush[8];
 };
 
 

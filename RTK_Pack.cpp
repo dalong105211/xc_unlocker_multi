@@ -99,7 +99,8 @@ BOOL CRTK_PackApp::InitInstance()
 	pFrame->ShowWindow(SW_SHOW);
 	CString Str;
 	//Str = "Augent Tool " + ((CMainFrame*)AfxGetMainWnd())->GetFileVersion();
-	Str = "Augent Tool v" + (((CMainFrame*)AfxGetMainWnd())->GetFileVersion()).Right(3);
+	//Str = "Augent Tool v" + (((CMainFrame*)AfxGetMainWnd())->GetFileVersion()).Right(3);
+	Str = " Multi Augent Tool v" + (((CMainFrame*)AfxGetMainWnd())->GetFileVersion()).Right(3);
 	pFrame->SetWindowText(Str);
 	//((CMainFrame*)AfxGetMainWnd())->m_wndStatusBar.SetPaneText(0,"×´Ì¬: Î´Á¬½Ó",TRUE);
 

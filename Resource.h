@@ -192,6 +192,14 @@
 #define IDC_CHECK_COM7                  1150
 #define IDC_CHECK_COM8                  1151
 #define IDC_CHECK_COM9                  1152
+#define IDC_STATIC1                     1152
+#define IDC_STATIC2                     1153
+#define IDC_STATIC3                     1154
+#define IDC_STATIC4                     1155
+#define IDC_STATIC5                     1156
+#define IDC_STATIC6                     1157
+#define IDC_STATIC7                     1158
+#define IDC_STATIC8                     1159
 #define ID_CONNECT                      32771
 #define ID_DISCONNECT                   32772
 #define ID_CREATPRODUCT                 32774
@@ -287,7 +295,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        194
 #define _APS_NEXT_COMMAND_VALUE         32896
-#define _APS_NEXT_CONTROL_VALUE         1144
+#define _APS_NEXT_CONTROL_VALUE         1153
 #define _APS_NEXT_SYMED_VALUE           107
 #endif
 #endif
