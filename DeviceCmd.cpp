@@ -540,7 +540,7 @@ void CExport::listTestEnterance()
 			setStatus(i,STATUS_READY);
 		}
 	}
-	Sleep(500);
+	//Sleep(500);
 	for (int i = 0; i < 8; i++)
 	{
 		if (isComChecked(i) == TRUE && workPortList[i].Find(PORT_MTK_DESC) > -1 && parseComport(workPortList[i], port) == TRUE)
